@@ -71,7 +71,10 @@ def get_assets(token):
         response = requests.post(url, headers=HEADERS, json=data)
         response.raise_for_status()
         assets = response.json()['data']
-        print(f"Dompet memiliki: {assets['diamond']['amount']} 💎 | {assets['egg']['amount']} 🥚 | {assets['usdt']['amount']} 💲")
+        diamond_amount = assets['diamond']['amount'] if 'diamond' in assets else 0
+        egg_amount = assets['egg']['amount'] if 'egg' in assets else 0
+        usdt_amount = assets['usdt']['amount'] if 'usdt' in assets else 0
+        print(f"Dompet memiliki: {diamond_amount} 💎 | {egg_amount} 🥚 | {usdt_amount} 💲")
     except requests.exceptions.RequestException as error:
         print("Kesalahan saat mendapatkan aset. Abaikan", error)
 
