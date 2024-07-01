@@ -124,17 +124,16 @@ def start_collecting(tg_web_app_data):
 # Fungsi utama untuk memproses setiap token satu per satu
 def process_tokens():
     tg_web_app_data_list = read_tg_web_app_data()
-    for index, tg_web_app_data in enumerate(tg_web_app_data_list):
-        username = extract_username(tg_web_app_data)
-        if username != "Username Tidak Diketahui":
-            print(f"Mulai proses untuk pengguna: {username}")
-            start_collecting(tg_web_app_data)
-            # Menambah jeda 60 detik setelah semua token diproses
-            if index == len(tg_web_app_data_list) - 1:
-                print("Semua token telah diproses. Menunggu 60 detik sebelum memulai ulang...")
-                time.sleep(60)
-        else:
-            print("Mengabaikan TG_WEB_APP_DATA yang tidak valid")
+    while True:
+        for tg_web_app_data in tg_web_app_data_list:
+            username = extract_username(tg_web_app_data)
+            if username != "Username Tidak Diketahui":
+                print(f"Mulai proses untuk pengguna: {username}")
+                start_collecting(tg_web_app_data)
+            else:
+                print("Mengabaikan TG_WEB_APP_DATA yang tidak valid")
+        print("Semua token telah diproses. Menunggu 60 detik sebelum memulai ulang...")
+        time.sleep(60)
 
 if __name__ == "__main__":
     process_tokens()
