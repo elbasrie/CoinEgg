@@ -2,7 +2,7 @@
 # CoinEgg Bot
 CoinEgg Auto Claim Bot 
 
-Join Here : [CoinEgg]((https://t.me/coinegg_miner_bot/miniapp?startapp=kBNoWEHfEAAZa9Q18tq)
+Join Here : [CoinEgg](https://t.me/coinegg_miner_bot/miniapp?startapp=kBNoWEHfEAAZa9Q18tq)
 
 CoinEgg, where you can earn money for free! Raise chickens, earn USDT. Come claim your chicken farm now, while supplies last!
 
